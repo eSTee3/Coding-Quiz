@@ -1,7 +1,6 @@
 var highScore = document.querySelector("#highScore");
 var clear = document.querySelector("#resetScores");
 var startOver = document.querySelector("#startOver");
-
  
 clear.addEventListener("click", function () {
     localStorage.clear();
@@ -18,7 +17,6 @@ if (allScores !== null) {
         var createLi = document.createElement("li");
         createLi.textContent = allScores[i].initials + " " + allScores[i].score;
         highScore.appendChild(createLi);
-
     }
 }
 startOver.addEventListener("click", function () {

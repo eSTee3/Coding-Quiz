@@ -1,34 +1,33 @@
 // String of questions and answers
 var questions = [
     {
-        title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        question: "What shortcut can be used, to start an HTML file with a default template?",
+        answers: ["Excalamation Point", "Ctrl+Shift+/", "Alt+F4", "Space+Eject"],
+        correctAnswer: "An excalamation point"
     },
     {
-        title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        question: "What does the word 'repo' mean, within git?",
+        answers: ["Reposessed", "Repolorization", "Repository", "Repopulate"],
+        correctAnswer: "Repository"
     },
     {
-        title: "Arrays in Javascript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
+        question: "How do you return the 3rd item in an array?",
+        answers: ["Ask it nicely", "With the number 2", "With the number 3", "all of the above"],
+        correctAnswer: "With the number 2"
     },
     {
-        title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-        answer: "quotes"
+        question: "What are the 3 standard file types that make up a basic web page?",
+        answers: [".exe, .csv and .mp4 files", "manilla, x and personal files", ".xlsx, .doc and .ppi files", ".html, .css and .js files"],
+        correctAnswer: ".html, .css and .js files"
     },
     {
-        title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
-        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
-        answer: "console log"
+        question: "What type of device works best for coding?",
+        answers: ["Windows PC", "Apple Computer", "Linux Computer", "All of the above"],
+        correctAnswer: "All of the above"
     },
 
 ];
 
-// Variables to use
 var score = 0;
 var questionIndex = 0;
 var startTimer = document.querySelector("#timer");
@@ -40,9 +39,7 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
-// Triggers timer on button, shows user a display on the screen
 startQuiz.addEventListener("click", function () {
-    // We are checking zero because its originally set to zero
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
@@ -51,26 +48,21 @@ startQuiz.addEventListener("click", function () {
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                startTimer.textContent = "Time's up!";
+                startTimer.textContent = "Time is up, try again!";
             }
         }, 1000);
     }
     render(questionIndex);
 });
 
-// Renders questions and choices to page: 
 function render(questionIndex) {
-    // Clears existing data 
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
-    // For loops to loop through all info in array
     for (var i = 0; i < questions.length; i++) {
-        // Appends question title only
-        var userQuestion = questions[questionIndex].title;
-        var userChoices = questions[questionIndex].choices;
+        var userQuestion = questions[questionIndex].question;
+        var userChoices = questions[questionIndex].answers;
         questionsDiv.textContent = userQuestion;
     }
-    // New for each for question choices
     userChoices.forEach(function (newItem) {
         var listItem = document.createElement("li");
         listItem.textContent = newItem;
@@ -79,7 +71,6 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
-// Event to compare choices with answer
 function compare(event) {
     var element = event.target;
 
@@ -87,23 +78,18 @@ function compare(event) {
 
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
-        // Correct condition 
-        if (element.textContent == questions[questionIndex].answer) {
+        if (element.textContent == questions[questionIndex].correctAnswer) {
             score++;
-            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].answer;
-            // Correct condition 
+            createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].correctAnswer;
         } else {
-            // Will deduct -5 seconds off secondsLeft for wrong answers
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].answer;
+            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].correctAnswer;
         }
 
     }
-    // Question Index determines number question user is on
     questionIndex++;
 
     if (questionIndex >= questions.length) {
-        // All done will append last page with user stats
         allDone();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
     } else {
@@ -112,25 +98,21 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 
 }
-// All done will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
     startTimer.innerHTML = "";
 
-    // Heading:
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
-    createH1.textContent = "All Done!"
+    createH1.textContent = "Great Job!"
 
     questionsDiv.appendChild(createH1);
 
-    // Paragraph
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
     questionsDiv.appendChild(createP);
 
-    // Calculates time remaining and replaces it with score
     if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
@@ -140,14 +122,12 @@ function allDone() {
         questionsDiv.appendChild(createP2);
     }
 
-    // Label
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
     createLabel.textContent = "Enter your initials: ";
 
     questionsDiv.appendChild(createLabel);
 
-    // input
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "initials");
@@ -155,7 +135,6 @@ function allDone() {
 
     questionsDiv.appendChild(createInput);
 
-    // submit
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
@@ -163,7 +142,6 @@ function allDone() {
 
     questionsDiv.appendChild(createSubmit);
 
-    // Event listener to capture initials and local storage for initials and score
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
 
@@ -186,7 +164,6 @@ function allDone() {
             allScores.push(finalScore);
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
-            // Travels to final page
             window.location.replace("./results.html");
         }
     });

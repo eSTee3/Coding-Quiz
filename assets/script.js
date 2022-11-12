@@ -31,8 +31,8 @@ var questions = [
 // Variables to use
 var score = 0;
 var questionIndex = 0;
-var timer = document.querySelector("#timer");
-var timer = document.querySelector("#quizStart");
+var startTimer = document.querySelector("#timer");
+var startTimer = document.querySelector("#quizStart");
 var questionsDiv = document.querySelector("#questionsDiv");
 var entirePage = document.querySelector("#entirePage");
 var secondsLeft = 76;
@@ -41,17 +41,17 @@ var penalty = 10;
 var ulCreate = document.createElement("ul");
 
 // Triggers timer on button, shows user a display on the screen
-timer.addEventListener("click", function () {
+startTimer.addEventListener("click", function () {
     // We are checking zero because its originally set to zero
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            timer.textContent = "Time: " + secondsLeft;
+            startTimer.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                timer.textContent = "Time's up!";
+                startTimer.textContent = "Time's up!";
             }
         }, 1000);
     }
@@ -115,7 +115,7 @@ function compare(event) {
 // All done will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
-    timer.innerHTML = "";
+    startTimer.innerHTML = "";
 
     // Heading:
     var createH1 = document.createElement("h1");

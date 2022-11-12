@@ -24,6 +24,5 @@ if (allScores !== null) {
 }
 
 startOver.addEventListener("click", function () {
-    // the 2 dots before index.html force the code to go up a folder level
-    window.location.replace("../index.html");
+    window.location.replace("/index.html");
 });

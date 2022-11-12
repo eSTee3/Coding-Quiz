@@ -1,5 +1,12 @@
-/* Sets styling for the entirety of the web page */
-#entirePage {
+/* Sets styling for the body */
+body {
+    padding-left: 40px;
+    padding-top: 20px;
+    background-color: rgb(78, 46, 46);
+}
+
+/* Sets styling for the quiz area */
+#quizArea {
     font-family: monospace;
     width: 600px;
     height: 750px;

@@ -139,8 +139,9 @@ li:hover {
     cursor: cell;
 }
 
+/* Formats the text that lets the end user know if they answered correctly */
 #createDiv {
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 15px;
     border-top: 10px solid rgb(1, 48, 217);
 }

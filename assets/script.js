@@ -90,13 +90,13 @@ function compare(event) {
             createDiv.textContent = "Correct! The answer is:  " + questions[questionIndex].correctAnswer;
         } else {
             secondsLeft = secondsLeft - penalty;
-            createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].correctAnswer;
+            createDiv.textContent = "I'm sorry but the correct answer is:  " + questions[questionIndex].correctAnswer;
         }
     }
     questionIndex++;
     if (questionIndex >= questions.length) {
         allDone();
-        createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+        createDiv.textContent = "Greate! You answered  " + score + "/" + questions.length + " questions correctly!";
     } else {
         render(questionIndex);
     }
@@ -124,14 +124,14 @@ function allDone() {
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
         // Displays quiz score to end user
-        createP.textContent = "Your final score is: " + timeRemaining;
+        createP.textContent = "You scored " + timeRemaining + " poins!";
 
         questionsDiv.appendChild(createP2);
     }
 
     var createLabel = document.createElement("label");
     createLabel.setAttribute("id", "createLabel");
-    createLabel.textContent = "Enter your initials: ";
+    createLabel.textContent = "Please enter your initials:";
 
     questionsDiv.appendChild(createLabel);
 
@@ -153,7 +153,7 @@ function allDone() {
         // Validation if statement, ensuring the end user enters something within the initials field
         if (initials === null) {
             // My (failed) attempt at setting the initials to "N/A" if nothing is entered
-            localStorage.setItem(initials,"N/A");
+            localStorage.setItem(initials,emptyInitials);
 
         } else {
             var finalScore = {

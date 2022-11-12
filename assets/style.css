@@ -1,3 +1,4 @@
+/* Sets styling for the entirety of the web page */
 #entirePage {
     font-family: monospace;
     width: 600px;
@@ -8,6 +9,7 @@
     background-color:rgb(230, 229, 229);
 }
 
+/* Sets the coloring of the "Start Quiz" button */
 #quizStart {
     background-color: rgb(3, 4, 3);
     position: center;
@@ -16,18 +18,21 @@
     color: white;
 }
 
+/* Changes colors (and mouse pointer) of the "Start Quiz" button, when hovered over */
 #quizStart:hover {
     color: white;
     background-color: darkgreen;
     cursor: cell;
 }
 
+/* Sets the quiz question formatting */
 #questionsDiv {
     margin: 30px;
     font-size: 20px;
     font-weight: 700;
 }
 
+/* Sets the formatting of the quiz timer */
 #timer {
     float: center;
     font-family:fantasy;
@@ -58,6 +63,7 @@
     cursor: cell;
 }
 
+/* Sets the "Clear highscores" button formatting */
 #resetScores {
     background-color: rgb(0, 0, 0);
     position: relative;
@@ -69,11 +75,20 @@
     text-align: center;
 }
 
+/* Sets the color and mouse pointer, when hovering over the "Clear Highscores" button */
+#resetScores:hover { 
+    color:rgb(0, 0, 0);
+    background-color: rgb(242, 58, 58);
+    cursor: cell;
+}
+
+/* Sets basic formatting for all "button" elements */
 button {
     border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
 }
 
+/* Sets the formatting of the "Submit" button (where the user enters their initials) */
 #Submit {
     background-color: purple;
     margin-left: 33%;
@@ -82,6 +97,7 @@ button {
     color: white;
 }
 
+/* Sets the color and mouse pointer, when hovering over the "Submit" button (where the user enters their initials) */
 #Submit:hover{
     color: rgb(192, 205, 2);
     background-color: rgb(3, 164, 14);
@@ -93,12 +109,17 @@ label {
     margin-right: 10px;
 }
 
+/* Sets the formatting of the input field for the end user's initials */
 input {
     margin-bottom: 20px;
-    width: 50%;
-    border: 1px solid lightgray;
+    width: 15%;
+    border: 5px solid rgb(1, 182, 11);
+    font-size: 30px;
+    font-family: fantasy;
+    color: blue;
 }
 
+/* Sets the formatting of the possible answers for each question */
 li {
     background-color:rgb(96, 96, 244);
     margin-top: 10px;
@@ -111,6 +132,7 @@ li {
     border-radius: 50px;
 }
 
+/* Sets the color and mouse cursor whenever an answer is hovered over */
 li:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(2, 135, 33);
@@ -118,8 +140,9 @@ li:hover {
 }
 
 #createDiv {
-    margin-top: 20px;
-    border-top: 1px solid lightgray;
+    font-size: 40px;
+    margin-top: 15px;
+    border-top: 10px solid rgb(1, 48, 217);
 }
 
 a {
@@ -128,17 +151,4 @@ a {
     font-size: 30px;
     font-weight: 700;
     color:rgb(250, 3, 217);
-}
-
-#resetScores {
-    
-    position: relative;
-    right: 5%;
-}
-
-#resetScores:hover {
-  
-    color:rgb(0, 0, 0);
-    background-color: rgb(242, 58, 58);
-    cursor: cell;
 }

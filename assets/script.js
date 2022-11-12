@@ -2,7 +2,7 @@
 var questions = [
     {
         question: "What shortcut can be used, to start an HTML file with a default template?",
-        answers: ["Excalamation Point", "Ctrl+Shift+/", "Alt+F4", "Space+Eject"],
+        answers: ["An excalamation point", "Ctrl+Shift+/", "Alt+F4", "Space+Eject"],
         correctAnswer: "An excalamation point"
     },
     {
@@ -148,10 +148,12 @@ function allDone() {
     questionsDiv.appendChild(createSubmit);
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
+        var emptyInitials = "N/A"
         
         // Validation if statement, ensuring the end user enters something within the initials field
         if (initials === null) {
-            console.log("Initials not entered");
+            // My (failed) attempt at setting the initials to "N/A" if nothing is entered
+            localStorage.setItem(initials,"N/A");
 
         } else {
             var finalScore = {

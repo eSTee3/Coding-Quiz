@@ -35,14 +35,9 @@ var timer = document.querySelector("#timer");
 var timer = document.querySelector("#quizStart");
 var questionsDiv = document.querySelector("#questionsDiv");
 var entirePage = document.querySelector("#entirePage");
-
-// Seconds left is 15 seconds per question:
 var secondsLeft = 76;
-// Holds interval time
 var holdInterval = 0;
-// Holds penalty time
 var penalty = 10;
-// Creates new element
 var ulCreate = document.createElement("ul");
 
 // Triggers timer on button, shows user a display on the screen

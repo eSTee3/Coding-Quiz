@@ -1,15 +1,13 @@
-// Jamie Morris Homework-4 Code Quiz 
-// Declared variables
 var highScore = document.querySelector("#highScore");
-var clear = document.querySelector("#clear");
-var goBack = document.querySelector("#goBack");
+var clear = document.querySelector("#resetScores");
+var startOver = document.querySelector("#startOver");
 
-// Event listener to clear scores 
+ 
 clear.addEventListener("click", function () {
     localStorage.clear();
     location.reload();
 });
-// Retreives local stroage 
+
 var allScores = localStorage.getItem("allScores");
 allScores = JSON.parse(allScores);
 
@@ -23,7 +21,7 @@ if (allScores !== null) {
 
     }
 }
-// Event listener to move to index page
-goBack.addEventListener("click", function () {
-    window.location.replace("./index.html");
+startOver.addEventListener("click", function () {
+    // the 2 dots before index.html force the code to go up a folder level
+    window.location.replace("../index.html");
 });

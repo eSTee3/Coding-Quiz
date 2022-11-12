@@ -1,5 +1,4 @@
-// Jamie Morris Homework-4 Code Quiz 
-// Var with array and object for questions 
+// String of questions and answers
 var questions = [
     {
         title: "Commonly used data types DO NOT include:",
@@ -28,13 +27,11 @@ var questions = [
     },
 
 ];
-// Declared variables
+
+// Variables to use
 var score = 0;
 var questionIndex = 0;
-
-// Start working code 
-// Declared variables
-var currentTime = document.querySelector("#currentTime");
+var timer = document.querySelector("#timer");
 var timer = document.querySelector("#quizStart");
 var questionsDiv = document.querySelector("#questionsDiv");
 var entirePage = document.querySelector("#entirePage");
@@ -54,12 +51,12 @@ timer.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            currentTime.textContent = "Time: " + secondsLeft;
+            timer.textContent = "Time: " + secondsLeft;
 
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
-                currentTime.textContent = "Time's up!";
+                timer.textContent = "Time's up!";
             }
         }, 1000);
     }
@@ -123,7 +120,7 @@ function compare(event) {
 // All done will append last page
 function allDone() {
     questionsDiv.innerHTML = "";
-    currentTime.innerHTML = "";
+    timer.innerHTML = "";
 
     // Heading:
     var createH1 = document.createElement("h1");

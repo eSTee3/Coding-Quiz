@@ -25,9 +25,9 @@ var questions = [
         answers: ["Windows PC", "Apple Computer", "Linux Computer", "All of the above"],
         correctAnswer: "All of the above"
     },
-
 ];
 
+// Set variables for when the quiz is started by the end user
 var score = 0;
 var questionIndex = 0;
 var startTimer = document.querySelector("#timer");
@@ -39,22 +39,27 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
+// Action to kick off the quiz (and end it if the timer runs out) via the "Start Quiz" button
 startQuiz.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
             startTimer.textContent = "Time: " + secondsLeft;
 
+            // Ends the quiz if timer reaches 0
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 allDone();
                 startTimer.textContent = "Time is up, try again!";
             }
+        
+        // Sets interval for each tick of the countown timer (1000 milliseconds)
         }, 1000);
     }
     render(questionIndex);
 });
 
+// Function used, to display quiz questions and allow interaction with them, for the end user
 function render(questionIndex) {
     questionsDiv.innerHTML = "";
     ulCreate.innerHTML = "";
@@ -71,6 +76,8 @@ function render(questionIndex) {
         listItem.addEventListener("click", (compare));
     })
 }
+
+// Displays the result (correct or incorrect) of the answer that the end user chooses, for each question
 function compare(event) {
     var element = event.target;
 
@@ -85,10 +92,8 @@ function compare(event) {
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong! The correct answer is:  " + questions[questionIndex].correctAnswer;
         }
-
     }
     questionIndex++;
-
     if (questionIndex >= questions.length) {
         allDone();
         createDiv.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
@@ -98,16 +103,17 @@ function compare(event) {
     questionsDiv.appendChild(createDiv);
 
 }
+
+// Function to display the end-of-quiz buttons and field (to enter initials)
 function allDone() {
     questionsDiv.innerHTML = "";
     startTimer.innerHTML = "";
 
     var createH1 = document.createElement("h1");
     createH1.setAttribute("id", "createH1");
+    // Message displayed to end user
     createH1.textContent = "Great Job!"
-
     questionsDiv.appendChild(createH1);
-
     var createP = document.createElement("p");
     createP.setAttribute("id", "createP");
 
@@ -117,6 +123,7 @@ function allDone() {
         var timeRemaining = secondsLeft;
         var createP2 = document.createElement("p");
         clearInterval(holdInterval);
+        // Displays quiz score to end user
         createP.textContent = "Your final score is: " + timeRemaining;
 
         questionsDiv.appendChild(createP2);
@@ -128,26 +135,23 @@ function allDone() {
 
     questionsDiv.appendChild(createLabel);
 
+    // Field for end user to enter initials
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "initials");
     createInput.textContent = "";
-
     questionsDiv.appendChild(createInput);
-
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "Submit");
     createSubmit.textContent = "Submit";
-
     questionsDiv.appendChild(createSubmit);
-
     createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
-
+        
+        // Validation if statement, ensuring the end user enters something within the initials field
         if (initials === null) {
-
-            console.log("No value entered!");
+            console.log("Initials not entered");
 
         } else {
             var finalScore = {

@@ -32,16 +32,16 @@ var questions = [
 var score = 0;
 var questionIndex = 0;
 var startTimer = document.querySelector("#timer");
-var startTimer = document.querySelector("#quizStart");
+var startQuiz = document.querySelector("#quizStart");
 var questionsDiv = document.querySelector("#questionsDiv");
 var entirePage = document.querySelector("#entirePage");
-var secondsLeft = 76;
+var secondsLeft = 60;
 var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
 // Triggers timer on button, shows user a display on the screen
-startTimer.addEventListener("click", function () {
+startQuiz.addEventListener("click", function () {
     // We are checking zero because its originally set to zero
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {

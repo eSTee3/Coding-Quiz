@@ -1,31 +1,12 @@
 # 04 Web APIs: Code Quiz
 
-## Table of Contents
+## Your Task
 
-- [Website Preview](#application-preview)
-- [Site Features](#site-features)
-- [Acceptance Criteria](#acceptance-criteria-for-this-challenge)
-- [Credits](#credits)
-    - [Git Cheat Sheet](#git-cheat-sheet-pdf)
-    - [Git Flow Process](#git-flow-process)
-    - [HTML Reference](#html-reference)
-    - [Java Basics](#java-basics)
-    - [Java Data Types](#java-data-types)
-- [License](#license)
-- [How To Contribute](#how-to-contribute)
+At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
 
-# Application Preview
+To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
 
-## [Link to Coding Quiz Application](https://estee3.github.io/Coding-Quiz/)
-
-Application Landing Page
-![alt text](./images/Landing%20Page.png)
-
-Question/Timer Preview
-![alt text](./images/Question%20Preview.png)
-
-Score Entry Page
-![alt text](./images/High%20Score%20Entry.png)
+This week’s coursework will equip you with all the skills you need to succeed in this assignment.
 
 High Score Page
 ![alt text](./images/Landing%20Page.png)

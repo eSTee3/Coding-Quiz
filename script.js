@@ -39,12 +39,12 @@ var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
 
-// Action to kick off the quiz (and end it if the timer runs out) via the "Start Quiz" button
+// Action to start the timer and kick off the quiz, via the "Start Quiz" button
 startQuiz.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
             secondsLeft--;
-            startTimer.textContent = "Time: " + secondsLeft;
+            startTimer.textContent = "Countdown Timer: " + secondsLeft;
 
             // Ends the quiz if timer reaches 0
             if (secondsLeft <= 0) {

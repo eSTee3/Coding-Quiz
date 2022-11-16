@@ -1,36 +1,53 @@
 # 04 Web APIs: Code Quiz
 
-## Your Task
+## Table of Contents
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+- [Website Preview](#application-preview)
+- [Site Features](#site-features)
+- [Acceptance Criteria](#acceptance-criteria-for-this-challenge)
+- [Credits](#credits)
+    - [Git Cheat Sheet](#git-cheat-sheet-pdf)
+    - [Git Flow Process](#git-flow-process)
+    - [HTML Reference](#html-reference)
+    - [Java Basics](#java-basics)
+    - [Java Data Types](#java-data-types)
+- [License](#license)
+- [How To Contribute](#how-to-contribute)
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+# Application Preview
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+## [Link to Coding Quiz Application](https://estee3.github.io/Coding-Quiz/)
 
-## User Story
+Application Landing Page
+![alt text](./images/Landing%20Page.png)
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+Question/Timer Preview
+![alt text](./images/Question%20Preview.png)
+
+Score Entry Page
+![alt text](./images/High%20Score%20Entry.png)
+
+High Score Page
+![alt text](./images/Landing%20Page.png)
+
+## Application Features
+- Color-changing interactive buttons so you can easily see what you are choosing/clicking
+- Countdown timer that drops by 10 seconds if an answer is incorrect
+- Ability to enter your initials to save it on the High Score List!
+- High Score Link that brings you directly to the high scores that have been logged
 
 ## Acceptance Criteria
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+***GIVEN I am taking a code quiz:***
+- ***WHEN*** I click the start button
+    - ***THEN*** a timer starts and I am presented with a question
+- ***WHEN*** I answer a question
+    - ***THEN*** I am presented with another question
+- ***WHEN*** I answer a question incorrectly
+    - ***THEN*** time is subtracted from the clock
+- ***WHEN*** all questions are answered or the timer reaches 0
+    - ***THEN*** the game is over
+- ***WHEN*** the game is over
+    - ***THEN*** I can save my initials and my score
 
 ## Mock-Up
 

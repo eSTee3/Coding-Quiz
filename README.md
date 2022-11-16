@@ -21,16 +21,16 @@ This application will provide the end user with a password generator solution, a
 # Application Preview
 ## [Link to Code Quiz Application](https://estee3.github.io/Coding-Quiz/index.html)
 
-Landing Page
+## Landing Page
 ![alt text](./images/Landing%20Page.png)
 
-Question Preview
+## Question Preview
 ![alt text](./images/Question%20Preview.png)
 
-High Score Entry Preview
+## High Score Entry Preview
 ![alt text](./images/High%20Score%20Entry.png)
 
-High Score Preview
+## High Score Preview
 ![alt text](./images/High%20Scores%20Preview.png)
 
 ## Application Features

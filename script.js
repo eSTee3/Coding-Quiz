@@ -96,7 +96,7 @@ function compare(event) {
     questionIndex++;
     if (questionIndex >= questions.length) {
         allDone();
-        createDiv.textContent = "Greate! You answered  " + score + "/" + questions.length + " questions correctly!";
+        createDiv.textContent = "Great! You answered  " + score + "/" + questions.length + " questions correctly!";
     } else {
         render(questionIndex);
     }
